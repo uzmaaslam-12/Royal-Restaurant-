@@ -287,13 +287,20 @@
         }
     });
 }
-       function quickOrderNow() {
+           function quickOrderNow() {
     Swal.fire({
         title: '<span style="font-family:serif; color:#f8df93;">Quick Inquiry</span>',
         background: '#680a0b',
         html: `
-            <input id="qn" class="swal2-input royal-input" style="background:#fffdf5 !important; border-radius:8px !important; color:#310303 !important;" placeholder="Your Name">
-            <input id="qp" class="swal2-input royal-input" style="background:#fffdf5 !important; border-radius:8px !important; color:#310303 !important;" placeholder="Phone Number">
+            <div style="display: flex; flex-direction: column; gap: 15px; width: 100%; box-sizing: border-box; padding: 0 5px;">
+                <input id="qn" class="swal2-input royal-input" 
+                       style="background:#fffdf5 !important; border-radius:8px !important; color:#310303 !important; width: 100% !important; margin: 0 !important; box-sizing: border-box !important; max-width: 100%;" 
+                       placeholder="Your Name">
+                       
+                <input id="qp" class="swal2-input royal-input" 
+                       style="background:#fffdf5 !important; border-radius:8px !important; color:#310303 !important; width: 100% !important; margin: 0 !important; box-sizing: border-box !important; max-width: 100%;" 
+                       placeholder="Phone Number">
+            </div>
         `,
         confirmButtonText: 'Send Request',
         confirmButtonColor: '#ae8f31',
@@ -304,7 +311,9 @@
             return true;
         }
     }).then((res) => {
-        if (res.isConfirmed) Swal.fire({ title: 'Request Sent', icon: 'success', background: '#310303', color: '#fffdf5' });
+        if (res.isConfirmed) {
+            Swal.fire({ title: 'Request Sent', icon: 'success', background: '#310303', color: '#fffdf5' });
+        }
     });
 }
 
